@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+@@include('./components/structure/_head.html', {
+'lang':'en',
+'css': './css/home.min.css',
+'title': 'Ears',
+'swiper': '',
+})
+
+<body class="home">
+  <div class="wrapper">
+    @@include('./components/structure/_header.html')
+    <main>
+      <h1 class="visually-hidden">Ears</h1>
+
+      <section class="hero">
+        <div class="hero__container">
+          <h2 class="visually-hidden">Features</h2>
+          <div class="hero__content">
+            <p class="hero__text">Discover Our Latest Products</p>
+            <p class="hero__par">Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a
+              product</p>
+            @@include('./components/base/_btn.html', {
+            'text': 'Buy Now'
+            })
+            <div class="hero__block-view">
+              <div class="hero__view">
+                @@include('./components/base/_pic-view.html', {
+                'way': 'user1'
+                })
+                @@include('./components/base/_pic-view.html', {
+                'way': 'user2'
+                })
+                @@include('./components/base/_pic-view.html', {
+                'way': 'user3'
+                })
+                @@include('./components/base/_pic-view.html', {
+                'way': 'user4'
+                })
+              </div>
+              <p class="hero__view-desc">15k Well
+                Reviews</p>
+            </div>
+          </div>
+          <div class="hero__show">
+            <div class="hero__block-video">
+              <div class="hero__video-pic-wrap">
+                @@include('./components/icons/border-play.svg')
+                <div class="hero__video-pic">
+                  <picture>
+                    <source type="image/webp" srcset="@img/gallery/video.webp">
+                    <img src="@img/gallery/video.png" alt="video-pic" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+              <span class="hero__video-sign">Play Video</span>
+            </div>
+            <div class="hero__product-block">
+              @@include('./components/base/_rhombus.html', {
+              'class': 'romb1'
+              })
+              <div class="hero__product-wrap">
+                <span class="hero__product-name" id="circle">Red Beats MI9c2zm/a</span>
+                @@include('./components/base/_card.html', {
+                'wayProduct': 'ears'
+                })
+              </div>
+              @@include('./components/base/_rhombus.html', {
+              'classelse': 'romb2'
+              })
+            </div>
+          </div>
+          @@include('./components/base/_pop-up.html')
+        </div>
+      </section>
+    </main>
+    @@include('./components/structure/_footer.html')
+  </div>
+  @@include('./components/structure/_scripts.html', {
+  'swiper': '',
+  })
+  <script src="./js/circletype.min.js"></script>
+</body>
+
+</html>

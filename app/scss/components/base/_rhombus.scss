@@ -1,0 +1,48 @@
+.romb {
+    color: #FFD600;
+    @include fz(50);
+    animation: color-change 3s infinite;
+}
+
+.romb1 {
+    transform: translateX(-29%);
+
+    @media (max-width: 900px) {
+        transform: translateX(0%);
+    }
+
+    @media (max-width: 1150px) {
+        transform: translateX(-23%);
+    }
+}
+
+.romb2 {
+    transform: translate(156%, -31%);
+    margin-left: auto;
+
+    @media (max-width: 767px) {
+        transform: translate(35%, 20%);
+    }
+
+    @media (max-width: 900px) {
+        transform: translate(35%, -31%);
+    }
+
+    @media (max-width: 1150px) {
+        transform: translate(118%, -31%);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: #FFD600;
+    }
+
+    50% {
+        color: #10B981;
+    }
+
+    100% {
+        color: #FFD600;
+    }
+}

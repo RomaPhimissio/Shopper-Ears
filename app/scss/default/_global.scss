@@ -1,0 +1,69 @@
+body.lock {
+   overflow: hidden;
+}
+
+body {
+   background-color: #fff;
+   color: $dark;
+   font-family: $ff1;
+   @include fz(16);
+   font-weight: 400;
+}
+
+[class*="__container"] {
+   padding-left: percent(85, 1440);
+   padding-right: percent(85, 1440);
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-height: 100vh;
+}
+
+main {
+   flex: 1 1 auto;
+}
+
+.image {
+   transition: all 0.3s ease;
+   overflow: hidden;
+   position: relative;
+   padding-bottom: 100%;
+   width: 100%;
+
+   img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   &.hv {
+      &:hover {
+         img {
+            transform: scale(1.2);
+         }
+      }
+   }
+}
+
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+}
+
+.no-scroll {
+   overflow: hidden;
+}

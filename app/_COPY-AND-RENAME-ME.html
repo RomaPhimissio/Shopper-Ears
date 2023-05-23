@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- ! Изменить все "Start" на нужные данные, после чего удалить эту строку и переименовать текущий файл-->
+@@include('./components/structure/_head.html', {
+'lang':'en',
+'css': './css/start.min.css',
+'title': 'Start',
+'swiper': 'y',
+})
+<!-- todo При указанном значении 'y' или 'yes' у ключа 'swiper' - добавляет стили на страницу -->
+<body class="start">
+   <div class="wrapper">
+      @@include('./components/structure/_header.html')
+      <main>
+         <section class="hero">
+            <div class="hero__container">
+               @@include('./components/base/_btn.html', {
+					'text': 'press me',
+					'modify': 'write-class-here'
+					})
+					@@include('./components/base/_spoiler.html')
+            </div>
+         </section>
+      </main>
+      @@include('./components/structure/_footer.html')
+   </div>
+   @@include('./components/structure/_scripts.html', {
+	'swiper': 'yes',
+	})
+   <!-- todo При указанном значении 'y' или 'yes' у ключа 'swiper' - добавляет скрипт на страницу -->
+</body>
+</html>

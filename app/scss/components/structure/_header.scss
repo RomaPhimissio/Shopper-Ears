@@ -1,0 +1,476 @@
+.header {
+   position: relative;
+
+   &:before {
+      // Накрывает менюшки с position: fixed
+
+      @media (max-width: 999px) {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: -100vw;
+         height: 100%;
+         background-color: lighten(#949edc, 5%); // todo Изменить на нужны цвет подложки
+         z-index: 6;
+         transition: all 0.3s ease 0s;
+      }
+
+      @media (max-width: 767px) {
+         width: 100vw;
+      }
+
+      @media (min-width: 768px) and (max-width: 999px) {
+         width: 40vw;
+      }
+   }
+
+   &__body {
+      min-height: 182px; // todo Указываем минимальную высоту шапки
+      display: flex;
+      justify-content: space-between; // todo Позиционируем элементы по оси Х
+      align-items: center;
+      gap: 30px;
+      padding-left: percent(85, 1440);
+      padding-right: percent(85, 1440);
+      padding-bottom: 6px;
+
+      @media (max-width: 767px) {
+         flex-wrap: wrap;
+         align-items: stretch;
+         gap: 10px;
+      }
+
+      @media (max-width: 1249px) {
+         padding-left: percent(50, 1250);
+         padding-right: percent(50, 1250);
+      }
+   }
+
+   &__logo {
+      z-index: 6;
+      font-size: 35px;
+      transition: all 0.3s ease;
+
+      @media (max-width: 767px) {
+         display: flex;
+         align-items: center;
+      }
+
+      &:hover {
+         @media (min-width: 1000px) {
+            transform: scale(1.2);
+         }
+      }
+   }
+
+   // .header__search-block
+
+   &__search-block {
+      @media (max-width: 767px) {
+         max-height: 70px;
+         margin-left: auto;
+      }
+
+      @media (max-width: 999px) {
+         z-index: 6;
+      }
+
+      @media (max-width: 1249px) {
+         gap: 15px;
+      }
+
+      display: flex;
+      gap: 23px;
+   }
+
+   // .header__search
+
+   &__search {
+      @media (max-width: 424px) {
+         padding: 0 10px;
+      }
+
+      @media (max-width: 767px) {
+         margin-right: 0;
+         gap: 15px;
+         min-width: 150px;
+      }
+
+      @media (max-width: 999px) {
+         background-color: $white;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+      font-family: inherit;
+      margin-right: 15px;
+      padding-left: 20px;
+      padding-right: 18px;
+      box-shadow: 0px 15px 50px rgba(46, 131, 158, 0.07);
+      border-radius: 10px;
+      min-height: 63px;
+      min-width: 190px;
+   }
+
+   // .header__field
+
+   &__field {
+      font-family: inherit;
+      padding-left: 12px;
+      padding-right: 12px;
+      width: 100%;
+      height: 100%;
+      text-overflow: ellipsis;
+   }
+
+   &__field::placeholder {
+      font-weight: 500;
+      color: rgba(41, 41, 48, 0.2);
+      @include lh(60);
+   }
+
+
+   // .header__btn
+
+   &__btn {
+      min-width: 38px;
+      height: 38px;
+      background-color: $greeN;
+      border-radius: 5px;
+
+      @media (min-width: 1000px) {
+         cursor: pointer;
+      }
+
+      i {
+         color: $white;
+         @include fz(21);
+      }
+   }
+
+   // .header__busket-link
+
+   &__busket-link {
+      @media (max-width: 424px) {
+         min-width: 60px;
+         height: 65px;
+      }
+
+      @media (max-width: 999px) {
+         min-width: 70px;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 500;
+      @include lh(60);
+      border: 1px solid #10B981;
+      filter: drop-shadow(0px 10px 35px rgba(0, 0, 0, 0.1));
+      border-radius: 30px;
+      min-width: 229px;
+
+      i {
+         @include fz(21);
+         color: $greeN;
+      }
+
+      span {
+         @media (max-width: 999px) {
+            display: none;
+         }
+      }
+   }
+
+   // .header__user-link
+
+   &__user-link {
+      @media (max-width: 424px) {
+         min-width: 60px;
+         height: 65px;
+      }
+
+      @media (max-width: 999px) {
+         min-width: 70px;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      gap: 10px;
+      min-width: 247px;
+      box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      background-color: $greeN;
+
+      i {
+         @include fz(21);
+      }
+
+      span {
+         @media (max-width: 999px) {
+            display: none;
+         }
+      }
+   }
+
+
+   &__nav {
+      z-index: 5;
+
+      @media (max-width: 767px) {
+         width: 100vw;
+         align-items: center;
+      }
+
+      @media (min-width: 768px) and (max-width: 999px) {
+         width: 40vw;
+      }
+
+      @media (max-width: 999px) {
+         overflow: auto;
+         left: -100vw;
+         padding-top: 182px;
+         padding-bottom: 20px;
+         top: 0;
+         height: 100vh;
+         position: absolute;
+         background-color: lighten(#949edc, 5%);
+         padding-left: percent(30, 768);
+         padding-right: percent(30, 768);
+         transition: all 0.3s ease 0s;
+      }
+
+      @media (min-width: 1000px) {
+         min-height: 81px;
+         background-color: $greeN;
+         display: flex;
+         justify-content: center;
+      }
+   }
+
+   &__list {
+      display: flex;
+      justify-content: center;
+      gap: 57px;
+
+      @media (max-width: 767px) {
+         align-items: center;
+         gap: 20px;
+      }
+
+      @media (min-width: 768px) and (max-width: 999px) {
+         gap: 20px;
+      }
+
+      @media (max-width: 999px) {
+         flex-direction: column;
+      }
+
+      @media (min-width: 1000px) {
+
+         align-items: center;
+      }
+
+
+      li {
+         cursor: pointer;
+         transition: all 0.3s ease;
+         @include fl(20, 24);
+
+         @media (max-width: 767px) {
+            width: 100%;
+            @include fz(27);
+         }
+
+         &:hover {
+            @media (min-width: 1000px) {}
+         }
+      }
+
+      a {
+         display: flex;
+         justify-content: center;
+         color: $white;
+         padding: 10px 15px;
+      }
+   }
+
+   &.active {
+      &:before {
+         left: 0;
+      }
+
+      .header__nav {
+         @media (max-width: 999px) {
+            left: 0;
+         }
+      }
+   }
+}
+
+.burger {
+   position: relative;
+   z-index: 6;
+   min-height: 40px; // Высота блока для удобства нажатия на иконку
+   width: 40px; // Ширина блока для удобства нажатия на иконку
+   // ? Двигаем на половину от разницы между width для .burger и width для .burger__wrapper что бы .burger прилип к контейнеру
+   margin-left: -5px;
+   // ? Двигаем на половину от разницы между width для .burger и width для .burger__wrapper что бы .burger прилип к контейнеру
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.3s ease;
+   cursor: pointer;
+
+   @media (min-width: 1000px) {
+      display: none;
+   }
+
+   // todo Если нужно изменить цвет бургера при наведении
+   /* 
+   &:hover .burger__wrapper {
+      span,
+      &:before,
+      &:after {
+         background-color: orange; 
+      }
+   }
+	*/
+   &__wrapper {
+      width: 30px; // todo Макетная ширина бургера
+      height: 20px; // todo Макетная высота бургера
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      span,
+      &:before,
+      &:after {
+         width: 100%;
+         height: 2px;
+         background-color: #000;
+         transition: all 0.3s ease;
+         transform: translate(0, 0);
+         position: relative;
+         left: 0;
+      }
+
+      &:before {
+         content: "";
+         animation: burgerTopDisabled 0.7s ease 0s 1;
+         animation-fill-mode: forwards;
+      }
+
+      &:after {
+         content: "";
+         animation: burgerBottomDisabled 0.7s ease 0s 1;
+         animation-fill-mode: forwards;
+      }
+
+      span {
+         top: 50%;
+         transform: translate(0, -150%);
+         // transition: background-color 0.3s ease, transform 0.3s ease 0.35s; //! Interesting effect (on desktop)
+         transition: background-color 0.3s ease, transform 0.3s ease 0s;
+      }
+
+      @keyframes burgerTopDisabled {
+
+         // Closing burger animation
+         0% {
+            top: 50%;
+            transform: translate(0, -50%) rotate(-45deg);
+         }
+
+         50% {
+            top: 50%;
+            transform: translate(0, -50%);
+         }
+
+         100% {
+            top: 0;
+            transform: translate(0, 0);
+         }
+      }
+
+      @keyframes burgerBottomDisabled {
+
+         // Closing burger animation
+         0% {
+            top: 50%;
+            transform: translate(0, -250%) rotate(45deg);
+         }
+
+         50% {
+            top: 50%;
+            transform: translate(0, -250%);
+         }
+
+         100% {
+            top: 100%;
+            transform: translate(0, -300%);
+         }
+      }
+   }
+
+   &.active {
+
+      // Opening burger animation
+      .burger__wrapper {
+         &:before {
+            animation: burgerTopActive 0.7s ease 0s 1;
+            animation-fill-mode: forwards;
+         }
+
+         span {
+            transform: translate(0, -150%) scale(0);
+            // transition: background-color 0.3s ease, transform 0.3s ease 0s; //! Interesting effect (on desktop)
+            transition: background-color 0.3s ease, transform 0.3s ease 0.3s;
+         }
+
+         &:after {
+            animation: burgerBottomActive 0.7s ease 0s 1;
+            animation-fill-mode: forwards;
+         }
+
+         @keyframes burgerTopActive {
+            0% {
+               top: 0;
+               transform: translate(0, 0);
+            }
+
+            50% {
+               top: 50%;
+               transform: translate(0, -50%);
+            }
+
+            100% {
+               top: 50%;
+               transform: translate(0, -50%) rotate(-45deg);
+            }
+         }
+
+         @keyframes burgerBottomActive {
+            0% {
+               top: 100%;
+               transform: translate(0, -300%);
+            }
+
+            50% {
+               top: 50%;
+               transform: translate(0, -250%);
+            }
+
+            100% {
+               top: 50%;
+               transform: translate(0, -250%) rotate(45deg);
+            }
+         }
+      }
+   }
+}

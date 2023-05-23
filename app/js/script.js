@@ -154,12 +154,22 @@ function openVideoPopup() {
    popUp.classList.add('active');
    body.classList.add('no-scroll');
    playVideo();
+
+   // Переворачиваем экран в горизонтальное положение (только на поддерживаемых устройствах)
+   if (window.screen.orientation) {
+      window.screen.orientation.lock('landscape');
+   }
 }
 
 function closeVideoPopup() {
    popUp.classList.remove('active');
    body.classList.remove('no-scroll');
    stopVideo();
+
+   // Разблокируем переворот экрана
+   if (window.screen.orientation) {
+      window.screen.orientation.unlock();
+   }
 }
 
 function playVideo() {

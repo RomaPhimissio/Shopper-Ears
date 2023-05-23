@@ -1,11 +1,17 @@
 .romb {
     color: #FFD600;
-    @include fz(50);
     animation: color-change 3s infinite;
+
+    @media (max-width: 767px) {
+        @include fz(35);
+    }
+
+    @media (min-width: 768px) {
+        @include fz(50);
+    }
 }
 
 .romb1 {
-    transform: translateX(-29%);
 
     @media (max-width: 900px) {
         transform: translateX(0%);
@@ -14,14 +20,18 @@
     @media (max-width: 1150px) {
         transform: translateX(-23%);
     }
+
+    @media (min-width: 1151px) {
+        transform: translateX(-29%);
+    }
 }
 
 .romb2 {
-    transform: translate(156%, -31%);
+
     margin-left: auto;
 
     @media (max-width: 767px) {
-        transform: translate(35%, 20%);
+        transform: translate(20%, 20%);
     }
 
     @media (max-width: 900px) {
@@ -30,6 +40,10 @@
 
     @media (max-width: 1150px) {
         transform: translate(118%, -31%);
+    }
+
+    @media (min-width: 1151px) {
+        transform: translate(156%, -31%);
     }
 }
 

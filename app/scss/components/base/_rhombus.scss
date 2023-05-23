@@ -3,7 +3,7 @@
     animation: color-change 3s infinite;
 
     @media (max-width: 767px) {
-        @include fz(15);
+        @include fz(35);
     }
 
     @media (min-width: 768px) {

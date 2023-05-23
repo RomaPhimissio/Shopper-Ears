@@ -132,56 +132,62 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ! Pop-up с авто запуском видео фрейма 
-const videoBtnSign = document.querySelector('.hero__video-sign');
-const popUp = document.querySelector('.pop-up');
-const popUpClose = document.querySelector('.pop-up__close');
-const videoIframe = document.querySelector('.pop-up__body iframe');
 
-videoBtnSign.addEventListener('click', toggleVideoPopup);
-popUpClose.addEventListener('click', toggleVideoPopup);
 
-function toggleVideoPopup() {
-   const isActive = popUp.classList.contains('active');
-   if (isActive) {
-      closeVideoPopup();
-   } else {
-      openVideoPopup();
+document.addEventListener('DOMContentLoaded', function () {
+
+   // ! Pop-up с авто запуском видео фрейма 
+   const videoBtnSign = document.querySelector('.hero__video-sign');
+   const popUp = document.querySelector('.pop-up');
+   const popUpClose = document.querySelector('.pop-up__close');
+   const videoIframe = document.querySelector('.pop-up__body iframe');
+
+   videoBtnSign.addEventListener('click', toggleVideoPopup);
+   popUpClose.addEventListener('click', toggleVideoPopup);
+
+   function toggleVideoPopup() {
+      const isActive = popUp.classList.contains('active');
+      if (isActive) {
+         closeVideoPopup();
+      } else {
+         openVideoPopup();
+      }
    }
-}
 
-function openVideoPopup() {
-   popUp.classList.add('active');
-   body.classList.add('no-scroll');
-   playVideo();
+   function openVideoPopup() {
+      popUp.classList.add('active');
+      body.classList.add('no-scroll');
+      playVideo();
 
-   // Переворачиваем экран в горизонтальное положение (только на поддерживаемых устройствах)
-   if (window.screen.orientation) {
-      window.screen.orientation.lock('landscape');
+      // Переворачиваем экран в горизонтальное положение (только на поддерживаемых устройствах)
+      if (window.screen.orientation) {
+         window.screen.orientation.lock('landscape');
+      }
    }
-}
 
-function closeVideoPopup() {
-   popUp.classList.remove('active');
-   body.classList.remove('no-scroll');
-   stopVideo();
+   function closeVideoPopup() {
+      popUp.classList.remove('active');
+      body.classList.remove('no-scroll');
+      stopVideo();
 
-   // Разблокируем переворот экрана
-   if (window.screen.orientation) {
-      window.screen.orientation.unlock();
+      // Разблокируем переворот экрана
+      if (window.screen.orientation) {
+         window.screen.orientation.unlock();
+      }
    }
-}
 
-function playVideo() {
-   const videoSrc = videoIframe.src;
-   if (videoSrc.includes('autoplay=0')) {
-      videoIframe.src = videoSrc.replace('autoplay=0', 'autoplay=1');
-   } else {
-      videoIframe.src += (videoSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+   function playVideo() {
+      const videoSrc = videoIframe.src;
+      if (videoSrc.includes('autoplay=0')) {
+         videoIframe.src = videoSrc.replace('autoplay=0', 'autoplay=1');
+      } else {
+         videoIframe.src += (videoSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+      }
    }
-}
 
-function stopVideo() {
-   const videoSrc = videoIframe.src;
-   videoIframe.src = videoSrc.replace('autoplay=1', 'autoplay=0');
-}
+   function stopVideo() {
+      const videoSrc = videoIframe.src;
+      videoIframe.src = videoSrc.replace('autoplay=1', 'autoplay=0');
+   }
+
+});

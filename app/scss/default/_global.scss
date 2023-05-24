@@ -11,8 +11,20 @@ body {
 }
 
 [class*="__container"] {
-   padding-left: percent(85, 1440);
-   padding-right: percent(85, 1440);
+   @media (max-width: 767px) {
+      padding-left: percent(20, 425);
+      padding-right: percent(20, 425);
+   }
+
+   @media (min-width: 768px) and (max-width: 999px) {
+      padding-left: percent(50, 768);
+      padding-right: percent(50, 768);
+   }
+
+   @media (min-width: 1000px) {
+      padding-left: percent(85, 1440);
+      padding-right: percent(85, 1440);
+   }
 }
 
 .wrapper {

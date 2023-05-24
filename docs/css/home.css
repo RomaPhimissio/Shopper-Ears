@@ -645,6 +645,45 @@ main {
   height: 100%;
 }
 
+.pop-up__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+}
+
+.pop-up__close-body {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-up__close-body:before,
+.pop-up__close-body:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 10;
+}
+
+.pop-up__close-body:before {
+  transform: rotate(45deg);
+}
+
+.pop-up__close-body:after {
+  transform: rotate(-45deg);
+}
+
 .spoiler {
   padding-left: 20px;
   padding-right: 20px;
@@ -990,48 +1029,9 @@ svg path {
 }
 
 @media (min-width: 768px) {
-  .pop-up__close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 40px;
-    width: 40px;
-  }
-
   .pop-up__close:hover .pop-up__close-body:before,
   .pop-up__close:hover .pop-up__close-body:after {
     background-color: #b3b3b3;
-  }
-
-  .pop-up__close-body {
-    width: 30px;
-    height: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .pop-up__close-body:before,
-  .pop-up__close-body:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    transition: all 0.3s ease;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    z-index: 10;
-  }
-
-  .pop-up__close-body:before {
-    transform: rotate(45deg);
-  }
-
-  .pop-up__close-body:after {
-    transform: rotate(-45deg);
   }
 
   .romb {
@@ -1287,10 +1287,6 @@ svg path {
     font-size: 1.6875em;
   }
 
-  .pop-up__wrapper {
-    padding: 10%;
-  }
-
   .card {
     width: 90%;
     height: auto;
@@ -1356,6 +1352,19 @@ svg path {
   }
 }
 
+@media (max-width: 649px) {
+  .pop-up__close {
+    right: 10px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 499px) {
+  .pop-up__wrapper {
+    padding: 13%;
+  }
+}
+
 @media (max-width: 424px) {
   .header__search {
     padding: 0 10px;
@@ -1388,7 +1397,15 @@ svg path {
   .pop-up__wrapper {
     padding: 9%;
   }
+}
 
+@media (min-width: 500px) and (max-width: 767px) {
+  .pop-up__wrapper {
+    padding: 10%;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 999px) {
   .pop-up__close {
     right: 20px;
     top: 20px;

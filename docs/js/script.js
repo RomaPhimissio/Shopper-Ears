@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
       playVideo();
 
       // Переворачиваем экран в горизонтальное положение (только на поддерживаемых устройствах)
-      if (window.screen.orientation) {
+      if (window.screen.orientation && window.screen.orientation.lock) {
          window.screen.orientation.lock('landscape');
       }
    }
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
       stopVideo();
 
       // Разблокируем переворот экрана
-      if (window.screen.orientation) {
+      if (window.screen.orientation && window.screen.orientation.unlock) {
          window.screen.orientation.unlock();
       }
    }

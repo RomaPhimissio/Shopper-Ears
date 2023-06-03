@@ -1,0 +1,19 @@
+.circle {
+    width: 43px;
+    height: 43px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #111111;
+}
+
+.circle-second {
+    background-color: #FFF500;
+}
+
+.circle-third {
+    background-color: #4484FF;
+}
+
+.circle.active {
+    outline: 1px solid #FF0000;
+}

@@ -7,6 +7,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 100px;
         padding-top: 77px;
+        padding-bottom: 51px;
 
         @media (max-width: 767px) {
             grid-template-columns: 1fr;
@@ -99,7 +100,7 @@
     &__show {
         display: flex;
         align-items: flex-end;
-        gap: 13%;
+        gap: 11%;
 
         @media (max-width: 767px) {
             padding-top: 20px;
@@ -230,4 +231,359 @@
             transform: translateX(-50%);
         }
     }
+}
+
+
+// ! Features === Features === Features === Features === Features === Features === Features
+// ! Features === Features === Features === Features === Features === Features === Features
+// ! Features === Features === Features === Features === Features === Features === Features
+
+.features {
+    background-color: $pluM;
+    // .features__container
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 73px;
+        column-gap: 103px;
+        padding-bottom: 4px;
+
+        @media (max-width: 999px) {
+            padding-top: 40px;
+        }
+
+        @media (max-width: 1250px) {
+            column-gap: 55px;
+            padding-bottom: 20px;
+        }
+    }
+
+    // .features__main-text
+
+    &__main-text {
+        width: 100%;
+        font-weight: 600;
+        @include fl(60, 73);
+        color: transparent;
+        text-shadow:
+            0 0 2px white,
+            0 0 2px white,
+            0 0 2px white,
+            0 0 2px white;
+
+        @media (max-width: 650px) {
+            @include fl(40, 40);
+            text-align: center;
+
+        }
+
+        @media (max-width: 799px) {
+            @include fl(50, 50);
+
+        }
+
+        @media (max-width: 1250px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    // .features__show
+
+    &__show {
+        padding-top: 37px;
+        flex: 1 1 auto;
+
+        @media (max-width: 999px) {
+            flex: 1 1 100%;
+            padding-top: 15px;
+        }
+    }
+
+    // .features__card-block
+
+    &__card-block {
+        display: flex;
+        gap: 32px;
+
+        @media (max-width: 499px) {
+            gap: 15px;
+        }
+    }
+
+    // .features__desc
+
+    &__desc {
+        @include fl(31, 35);
+        color: $white;
+        text-align: center;
+
+        @media (max-width: 499px) {
+            @include fl(25, 30);
+
+        }
+
+        @media (min-width: 1251px) {
+            transform: translate(0%, -25%);
+        }
+    }
+
+    // .features__cost
+
+    &__cost {
+        font-weight: 600;
+        @include lh(38);
+    }
+
+    // .features__content
+
+    &__content {
+        flex: 0 1 41%;
+
+        @media (max-width: 999px) {
+            flex: 0 1 100%;
+        }
+    }
+
+    // .features__title
+
+    &__title {
+        @include fl(44, 54);
+        font-weight: 600;
+        color: $white;
+        margin-bottom: 10px;
+
+        @media (max-width: 499px) {
+            @include fl(35, 43);
+
+        }
+    }
+
+    // .features__par
+
+    &__par {
+        font-weight: 500;
+        @include fl(21, 35);
+        color: $white;
+        margin-bottom: 35px;
+    }
+
+    // .features__btn-block
+
+    &__btn-block {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+// ! Products ===  Products === Products === Products === Products === Products
+// ! Products ===  Products === Products === Products === Products === Products
+// ! Products ===  Products === Products === Products === Products === Products
+
+.products {
+
+    // .products__container
+
+    &__container {
+        padding-top: 9%;
+    }
+
+    // .products__title
+
+    &__title {
+        font-weight: 600;
+        @include fl(44, 54);
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    // .products__breadcrumbs
+
+    &__breadcrumbs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 29px;
+        padding-right: 16px;
+        margin-bottom: 91px;
+
+        @media (max-width: 499px) {
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__breadcrumbs-two {
+        padding-right: 0;
+        padding-left: 25px;
+    }
+
+    &__slider-wrapper {
+        display: flex;
+    }
+}
+
+.swiper-slide {
+    @media (max-width: 424px) {
+        width: 288px;
+    }
+
+    @media (min-width: 425px) {
+        width: 361px;
+    }
+}
+
+.products__container-second {
+    padding-bottom: 5%;
+}
+
+// ! Blog === Blog === Blog === Blog === Blog === Blog === Blog === Blog === Blog
+// ! Blog === Blog === Blog === Blog === Blog === Blog === Blog === Blog === Blog
+// ! Blog === Blog === Blog === Blog === Blog === Blog === Blog === Blog === Blog
+
+.blog {
+    padding-top: 4%;
+    // .blog__title
+
+    &__title {
+        font-weight: 600;
+        @include fl(44, 54);
+        text-align: center;
+        margin-bottom: 8.4%;
+    }
+
+    // .blog__wrap
+
+    &__wrap {
+        background-color: $pluM;
+
+        @media (min-width: 1350px) {
+            padding: 0 3.1%;
+        }
+    }
+
+    // .blog__container
+
+    &__container {
+        display: flex;
+        gap: 82px;
+        padding-top: 4.6%;
+        padding-bottom: 5.3%;
+
+        @media (max-width: 500px) {
+            gap: 30px;
+        }
+
+        @media (max-width: 999px) {
+            flex-direction: column-reverse;
+        }
+
+        @media (max-width: 1200px) {
+            gap: 50px;
+        }
+    }
+
+    // .blog__show
+
+    &__show {
+        display: flex;
+        gap: 45px;
+        flex: 0 1 86%;
+    }
+
+    // .blog__content
+
+    &__content {
+        padding-top: 1%;
+    }
+
+    // .blog__subtitle
+
+    &__subtitle {
+        font-weight: 600;
+        @include fl(60, 73);
+        color: $white;
+        margin-bottom: 28px;
+
+        @media (max-width: 500px) {
+            @include fl(40, 50);
+
+        }
+
+        @media (max-width: 999px) {
+            margin-bottom: 17px;
+        }
+
+        @media (max-width: 1099px) {
+            @include fl(50, 60);
+
+        }
+    }
+
+    // .blog__text
+
+    &__text {
+        font-weight: 500;
+        @include fl(21, 35);
+        color: $white;
+        margin-bottom: 25px;
+
+        @media (max-width: 500px) {
+            @include fl(19, 30);
+
+        }
+    }
+
+    // .blog__par
+
+    &__par {
+        margin-bottom: 48px;
+
+        @media (max-width: 999px) {
+            margi-bottom: 30px
+        }
+    }
+
+    // .blog__par
+
+    &__elem {
+        @include fl(31, 35);
+        color: $white;
+        margin-right: 19px;
+
+        @media (max-width: 500px) {
+            @include fl(25, 30);
+
+        }
+    }
+
+    // .blog__elem
+
+    &__elem-sec {
+        font-weight: 600;
+        @include fl(31, 38);
+        color: $white;
+
+        @media (max-width: 500px) {
+            @include fl(27, 30);
+
+        }
+    }
+
+    // .blog__block-elements
+
+    &__block-elements {
+        display: inline-flex;
+        gap: 31px;
+        margin-bottom: 50px;
+
+        @media (max-width: 999px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    // .blog__btn-block
+
+    &__btn-block {}
 }

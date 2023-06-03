@@ -190,3 +190,142 @@ document.addEventListener('DOMContentLoaded', function () {
    }
 
 });
+
+
+// ! Breadcrumbs === Breadcrumbs === Breadcrumbs === Breadcrumbs === Breadcrumbs
+
+function handleClick(event) {
+   const parent = event.currentTarget.parentNode;
+   const breadcrumbs = parent.querySelectorAll('.breadcrumb');
+
+   breadcrumbs.forEach((breadcrumb) => {
+      breadcrumb.classList.remove('active');
+   });
+
+   event.target.classList.add('active');
+}
+
+const breadcrumbs1 = document.querySelectorAll('.products__breadcrumbs .breadcrumb');
+const breadcrumbs2 = document.querySelectorAll('.products__breadcrumbs-two .breadcrumb');
+
+function handleBreadcrumbClick1(event) {
+   handleClick(event);
+}
+
+function handleBreadcrumbClick2(event) {
+   handleClick(event);
+}
+
+breadcrumbs1.forEach((breadcrumb, index) => {
+   breadcrumb.addEventListener('click', handleBreadcrumbClick1);
+
+   // При загрузке страницы устанавливаем класс "active" для первого элемента
+   if (index === 0) {
+      breadcrumb.classList.add('active');
+   }
+});
+
+breadcrumbs2.forEach((breadcrumb, index) => {
+   breadcrumb.addEventListener('click', handleBreadcrumbClick2);
+
+   // При загрузке страницы устанавливаем класс "active" для первого элемента
+   if (index === 0) {
+      breadcrumb.classList.add('active');
+   }
+});
+
+
+// ! Stars === Stars === Stars === Stars === Stars === Stars === Stars
+
+// Находим все контейнеры с классом "prod-card__block"
+const prodCardBlocks = document.querySelectorAll('.prod-card__block');
+
+// Обработчик клика на звездах
+function handleStarClick(event) {
+   const star = event.target;
+   const starsContainer = star.parentNode;
+   const rating = parseInt(starsContainer.dataset.rating);
+   const starIndex = Array.from(starsContainer.children).indexOf(star);
+
+   // Установить новый рейтинг
+   starsContainer.dataset.rating = starIndex + 1;
+
+   // Обновить классы звезд
+   Array.from(starsContainer.children).forEach((star, index) => {
+      if (index <= starIndex) {
+         star.classList.add('selected');
+      } else {
+         star.classList.remove('selected');
+      }
+   });
+}
+
+// Проходимся по каждому контейнеру "prod-card__block"
+prodCardBlocks.forEach((block) => {
+   const starsContainer = block.querySelector('.prod-card__stars');
+   const stars = block.querySelectorAll('.star');
+
+   // Устанавливаем начальный рейтинг для каждого блока
+   starsContainer.dataset.rating = '0';
+
+   // Добавляем обработчик клика на звездах
+   stars.forEach((star, index) => {
+      star.addEventListener('click', handleStarClick);
+   });
+});
+
+
+// ! Swiper === Swiper === Swiper === Swiper === Swiper === Swiper === Swiper
+
+new Swiper('.swiper', {
+   // клавиатура
+   keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true
+   },
+   // ширина слайда
+   slidesPerView: 'auto',
+
+   // Отступ между слайдами
+
+
+   breakpoints: {
+      320: {
+         spaceBetween: 30
+      },
+      480: {
+         spaceBetween: 50
+      },
+      1000: {
+         spaceBetween: 93
+      }
+   }
+});
+
+
+// ! Circles === Circles === Circles === Circles === Circles === Circles
+
+// Находим все элементы с классом "circle"
+const circles = document.querySelectorAll('.circle');
+
+// Обработчик клика на элементе
+function handleClickTwo(event) {
+   const clickedCircle = event.target;
+
+   // Удаляем класс "active" у всех элементов
+   circles.forEach(circle => {
+      circle.classList.remove('active');
+   });
+
+   // Добавляем класс "active" только на кликнутый элемент
+   clickedCircle.classList.add('active');
+}
+
+// Добавляем обработчик клика на каждый элемент
+circles.forEach(circle => {
+   circle.addEventListener('click', handleClickTwo);
+});
+
+// Добавляем класс "active" к первому элементу
+circles[0].classList.add('active');

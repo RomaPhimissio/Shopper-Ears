@@ -61,7 +61,11 @@
               <div class="hero__product-wrap">
                 <span class="hero__product-name" id="circle">Red Beats MI9c2zm/a</span>
                 @@include('./components/base/_card.html', {
-                'wayProduct': 'ears'
+                'inner': 'card__inner',
+                'mainClass': 'card',
+                'way': 'ears',
+                'cost': 'card__cost',
+                'pic': 'img',
                 })
               </div>
               @@include('./components/base/_rhombus.html', {
@@ -72,12 +76,281 @@
           @@include('./components/base/_pop-up.html')
         </div>
       </section>
+      <section class="features">
+        <div class="features__container">
+          <p class="features__main-text">Apple wireless Airpod</p>
+          <div class="features__show">
+            <div class="features__card-block">
+              @@include('./components/base/_card.html', {
+              'way': 'features1',
+              'cost': 'card-features__cost',
+              'mainClass': 'card-features',
+              'inner': 'card-features__inner',
+              'pic': 'img',
+              })
+              @@include('./components/base/_card.html', {
+              'way': 'features2',
+              'cost': 'card-features__cost',
+              'mainClass': 'card-features',
+              'inner': 'card-features__inner',
+              'pic': 'img',
+              })
+              @@include('./components/base/_card.html', {
+              'way': 'features3',
+              'cost': 'card-features__cost',
+              'mainClass': 'card-features',
+              'inner': 'card-features__inner',
+              'pic': 'img',
+              })
+            </div>
+            <p class="features__desc">Price : &nbsp;<span class="features__cost">$45 .99</span></p>
+          </div>
+          <div class="features__content">
+            <h2 class="features__title">Our Featured Products</h2>
+            <p class="features__par">Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a
+              product</p>
+            <div class="features__btn-block">
+              @@include('./components/base/_btn.html', {
+              'text': 'Add to cart',
+              'class-first': 'btn-feat-first'
+              })
+              @@include('./components/base/_btn.html', {
+              'text': 'View more',
+              'class-second': 'btn-feat-second'
+              })
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="products">
+        <div class="products__container">
+          <h2 class="products__title">Top Sellers</h2>
+          <div class="products__breadcrumbs">
+            @@include('./components/base/_breadcrumb.html', {
+            'text': 'Top Picks'
+            })
+            @@include('./components/base/_breadcrumb.html', {
+            'text': 'Watches'
+            })
+          </div>
+          <div class="products__slider swiper">
+            <div class="products__slider-wrapper swiper-wrapper">
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_discount.html', {
+                'cont': 'Save 60%'
+                })
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod1',
+                'text': 'Boat Rockerz 333',
+                'textCost': '$20'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod2',
+                'text': 'Boat kerz 234',
+                'textCost': '$40',
+                'class': 'prod-card__block2'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_discount.html', {
+                'cont': 'Save 40%',
+                'class': 'discount-one'
+                })
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod3',
+                'text': 'Boat Rockerz 323',
+                'textCost': '$30',
+                'class': 'prod-card__block3'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod2',
+                'text': 'Boat kerz 234',
+                'textCost': '$40',
+                'class': 'prod-card__block2'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_discount.html', {
+                'cont': 'Save 40%',
+                'class': 'discount-one'
+                })
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod3',
+                'text': 'Boat Rockerz 323',
+                'textCost': '$30',
+                'class': 'prod-card__block3'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="products">
+        <div class="products__container products__container-second">
+          <h2 class="products__title">Trending Earphones</h2>
+          <div class="products__breadcrumbs products__breadcrumbs-two">
+            @@include('./components/base/_breadcrumb.html', {
+            'text': 'Earbuds'
+            })
+            @@include('./components/base/_breadcrumb.html', {
+            'text': 'Wireless'
+            })
+            @@include('./components/base/_breadcrumb.html', {
+            'text': 'Wired'
+            })
+          </div>
+          <div class="products__slider products__slider2 swiper">
+            <div class="swiper-wrapper">
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_discount.html', {
+                'cont': 'Save 60%'
+                })
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod4',
+                'text': 'Boat Rockerz 333',
+                'textCost': '$20',
+                'class': 'prod-card__block4'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod2',
+                'text': 'Boat kerz 234',
+                'textCost': '$40',
+                'class': 'prod-card__block5'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_discount.html', {
+                'cont': 'Save 40%',
+                'class': 'discount-two'
+                })
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod5',
+                'text': 'Boat Rockerz 323',
+                'textCost': '$30',
+                'class': 'prod-card__block6'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_discount.html', {
+                'cont': 'Save 60%'
+                })
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod4',
+                'text': 'Boat Rockerz 333',
+                'textCost': '$20',
+                'class': 'prod-card__block4'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+              <div class="prod-card swiper-slide">
+                @@include('./components/base/_prod-block.html', {
+                'way': 'prod2',
+                'text': 'Boat kerz 234',
+                'textCost': '$40',
+                'class': 'prod-card__block5'
+                })
+                @@include('./components/base/_btn.html', {
+                'class': 'btn-prod',
+                'text': 'Add to cart'
+                })
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="blog">
+        <h2 class="blog__title">New Launches</h2>
+        <div class="blog__wrap">
+          <div class="blog__container">
+            <div class="blog__show">
+              @@include('./components/base/_card.html', {
+              'way': 'blog1',
+              'cost': 'card-features__cost',
+              'mainClass': 'card-blog',
+              'inner': 'card-blog__inner'
+              })
+              @@include('./components/base/_card.html', {
+              'way': 'blog2',
+              'cost': 'card-features__cost',
+              'mainClass': 'card-blog',
+              'inner': 'card-blog__inner'
+              })
+            </div>
+            <div class="blog__content">
+              <p class="blog__subtitle">Airdrop 500 Anc</p>
+              <p class="blog__text">Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a
+                product ... Read More</p>
+              <p class="blog__par"><span class="blog__elem">Price : </span><span class="blog__elem-sec">$45 .99</span>
+              </p>
+              <div class="blog__block-elements">
+                @@include('./components/base/_circle.html')
+                @@include('./components/base/_circle.html', {
+                'class': 'circle-second'
+                })
+                @@include('./components/base/_circle.html', {
+                'class': 'circle-third'
+                })
+              </div>
+              <div class="blog__btn-block">
+                @@include('./components/base/_btn.html', {
+                'text': 'Add to cart',
+                'class-first': 'btn-blog'
+                })
+                @@include('./components/base/_btn.html', {
+                'text': 'Explore More',
+                'class-second': 'btn-blog-second'
+                })
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     @@include('./components/structure/_footer.html')
   </div>
-  @@include('./components/structure/_scripts.html', {
-  'swiper': '',
-  })
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
   <script src="./js/circletype.min.js"></script>
 </body>
 

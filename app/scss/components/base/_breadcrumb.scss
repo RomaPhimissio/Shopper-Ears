@@ -1,0 +1,14 @@
+.breadcrumb {
+    @include fl(26, 32);
+    font-weight: 600;
+    color: $blacK;
+    display: inline-block;
+    padding: 30px 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.breadcrumb.active {
+    background-color: $greeN;
+    color: $white;
+}

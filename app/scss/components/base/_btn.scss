@@ -107,3 +107,15 @@
       min-width: 250px;
    }
 }
+
+.btn-footer {
+   border-radius: 0;
+   min-width: initial;
+   min-height: initial;
+   padding: 12px 32px;
+   margin-bottom: 0;
+
+   @media (max-width: 1000px) {
+      margin-bottom: 0;
+   }
+}

@@ -47,27 +47,46 @@ window.addEventListener("load", () => {
    }
 
    // ! Spoiler.html
-   if (qa(".spoiler")) {
-      // ? Если нужно открыть только первый спойлер на странице. Можно прогнать циклом для остальных
-      if (qs(".spoiler").classList.contains("opened")) {
-         let spoilerWrapper = qa(".spoiler__wrapper")[0];
-         spoilerWrapper.style.height = spoilerWrapper.scrollHeight + "px";
-      }
 
-      body.addEventListener("click", toggleSpoiler);
+   if (qa(".footer__preview")) {
+      body.addEventListener("click", toggleAccordion);
 
-      function toggleSpoiler(e) {
-         if (e.target.closest(".spoiler__preview")) {
-            e.target.closest(".spoiler").classList.toggle("opened");
-            let spoilerWrapper = e.target.closest(".spoiler__preview").nextElementSibling;
-            if (!e.target.closest(".spoiler").classList.contains("opened")) {
-               spoilerWrapper.style.height = null;
-            } else {
-               spoilerWrapper.style.height = spoilerWrapper.scrollHeight + "px";
+      function toggleAccordion(e) {
+         const preview = e.target.closest(".footer__preview");
+         if (preview) {
+            const currentAccordion = preview.closest(".footer__column");
+            const content = currentAccordion.querySelector(".footer__column-block-text");
+
+            if (currentAccordion && content) {
+               const isExpanded = currentAccordion.classList.contains("opened");
+
+               const accordions = qa(".footer__column");
+               const contents = qa(".footer__column-block-text");
+
+               accordions.forEach(accordion => {
+                  const accordionPreview = accordion.querySelector(".footer__preview");
+                  const accordionContent = accordion.querySelector(".footer__column-block-text");
+
+                  if (accordion === currentAccordion) {
+                     accordion.classList.toggle("opened", !isExpanded);
+                     accordionContent.style.height = isExpanded ? null : `${accordionContent.scrollHeight}px`;
+                  } else {
+                     accordion.classList.remove("opened");
+                     accordionContent.style.height = null;
+                  }
+
+                  if (accordionPreview) {
+                     const arrowIcon = accordionPreview.querySelector(".arrow");
+                     if (arrowIcon) {
+                        arrowIcon.style.transform = accordion.classList.contains("opened") ? "rotate(270deg)" : "rotate(90deg)";
+                     }
+                  }
+               });
             }
          }
       }
    }
+
 
    // ! Dropdown 
    const dropdowns = document.querySelectorAll('.dropdown');

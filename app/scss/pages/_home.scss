@@ -125,8 +125,6 @@
 
     &__block-video {
         display: flex;
-        flex-direction: column;
-        align-items: center;
         padding-bottom: 48px;
         margin-left: -8px;
 
@@ -139,6 +137,18 @@
             align-items: flex-start;
             padding-left: 15%;
             transform: translate(0%, -27%);
+        }
+    }
+
+    // .hero__block-video-wrap
+
+    &__block-video-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 1000px) {
+            cursor: pointer;
         }
     }
 
@@ -182,10 +192,6 @@
     &__video-sign {
         font-weight: 500;
         @include fl(21, 35);
-
-        @media (min-width: 1000px) {
-            cursor: pointer;
-        }
     }
 
 
@@ -387,6 +393,7 @@
 
     &__container {
         padding-top: 9%;
+        overflow: hidden;
     }
 
     // .products__title

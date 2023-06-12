@@ -89,6 +89,16 @@
     &__field {
         width: 100%;
         padding: 13px 10px 21px 0;
+
+        @media (min-width: 1000px) {
+            transition: all 0.3s ease 0s;
+        }
+    }
+
+    &__field:hover {
+        @media (min-width: 1000px) {
+            padding-left: 5%;
+        }
     }
 
     &__field::placeholder {
@@ -106,9 +116,20 @@
         border-radius: 8px 8px 0px 0px;
         background-color: $greeN;
 
+        @media (min-width: 1000px) {
+            cursor: pointer;
+            transition: all 0.05s ease 0s;
+        }
+
         i {
             color: $white;
             @include fz(12);
+        }
+    }
+
+    &__btn:hover {
+        @media (min-width: 1000px) {
+            background-color: darken($greeN, 5%);
         }
     }
 
@@ -170,6 +191,7 @@
     // .footer__column-block-text
 
     &__column-block-text {
+
         @media (max-width: 999px) {
             height: 0;
             overflow: hidden;
@@ -183,7 +205,28 @@
         color: #111111;
         @include fl(15, 20);
         margin-bottom: 20px;
+
+        a {
+            display: inline-block;
+
+            @media (min-width: 1000px) {
+                position: relative;
+            }
+        }
     }
+
+    a:hover::after {
+        @media (min-width: 1000px) {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: $blacK;
+            left: 0;
+            bottom: -3px;
+        }
+    }
+
 
     // .footer__copy-block
 
@@ -207,6 +250,27 @@
     &__copy-desc {
         color: #111111;
         @include fl(15, 20);
+
+        a {
+            @media (min-width: 1000px) {
+                position: relative;
+            }
+        }
+
+    }
+
+    &__copy-desc {
+        a:hover::after {
+            @media (min-width: 1000px) {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: $blacK;
+                left: 0;
+                bottom: -3px;
+            }
+        }
     }
 
     // .footer__social
@@ -217,24 +281,44 @@
     }
 }
 
+.footer-icon {
+    cursor: pointer;
+}
+
 .face {
+    transition: all 0.1s ease 0s;
     @include fz(22);
+}
+
+.face:hover {
+    color: #3b5998;
 }
 
 .twit {
     @include fz(22);
+    transition: all 0.1s ease 0s;
+}
+
+.twit:hover {
+    color: #00acee;
 }
 
 .insta {
+    transition: all 0.1s ease 0s;
     @include fz(22);
 }
 
-.footer__preview.opened {
-    i {
-        @media (max-width: 999px) {
-            transform: rotate(90deg);
-        }
-    }
+.insta:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
+.opened .arrow {
+    transform: rotate(270deg);
+}
 
+.opened .footer__column-block-text {
+    height: auto;
 }

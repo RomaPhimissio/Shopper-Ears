@@ -43,16 +43,18 @@
           </div>
           <div class="hero__show">
             <div class="hero__block-video">
-              <div class="hero__video-pic-wrap">
-                @@include('./components/icons/border-play.svg')
-                <div class="hero__video-pic">
-                  <picture>
-                    <source type="image/webp" srcset="@img/gallery/video.webp">
-                    <img src="@img/gallery/video.png" alt="video-pic" loading="lazy">
-                  </picture>
+              <div class="hero__block-video-wrap">
+                <div class="hero__video-pic-wrap">
+                  @@include('./components/icons/border-play.svg')
+                  <div class="hero__video-pic">
+                    <picture>
+                      <source type="image/webp" srcset="@img/gallery/video.webp">
+                      <img src="@img/gallery/video.png" alt="video-pic">
+                    </picture>
+                  </div>
                 </div>
+                <span class="hero__video-sign">Play Video</span>
               </div>
-              <span class="hero__video-sign">Play Video</span>
             </div>
             <div class="hero__product-block">
               @@include('./components/base/_rhombus.html', {

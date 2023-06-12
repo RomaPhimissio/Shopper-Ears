@@ -6,9 +6,14 @@
     padding: 30px 25px;
     border-radius: 50%;
     cursor: pointer;
+
+    &:hover {
+        box-shadow: 7px 7px 15px #949494;
+    }
 }
 
 .breadcrumb.active {
     background-color: $greeN;
     color: $white;
+    box-shadow: none;
 }

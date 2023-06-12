@@ -8,21 +8,18 @@
    border-radius: 10px;
    min-width: 263px;
    min-height: 70px;
-   transition: all 0.3s ease;
+   transition: all 0.1s ease;
    margin-bottom: 108px;
 
    @media (max-width: 1000px) {
       margin-bottom: 60px;
    }
 
-   // &:hover {
-   //    transform: scale(1.2);
-   //    background-color: rgb(66, 217, 255);
-   // }
-   // &.modify {
-   //    color: rgb(255, 0, 0);
-   //    background-color: rgb(0, 0, 0);
-   // }
+   &:hover {
+      @media (min-width: 1000px) {
+         background-color: darken($greeN, 5%);
+      }
+   }
 }
 
 .btn-feat-first {
@@ -67,6 +64,13 @@
    @media (max-width: 1149px) {
       min-width: 200px;
    }
+
+   &:hover {
+      @media (min-width: 1000px) {
+         outline: 1px solid $white;
+         background-color: initial;
+      }
+   }
 }
 
 .btn-prod {
@@ -94,6 +98,13 @@
 }
 
 .btn-blog-second {
+   &:hover {
+      @media (min-width: 1000px) {
+         outline: 1px solid $white;
+         background-color: initial;
+      }
+   }
+
    background-color: transparent;
    @include lh(35);
    margin-bottom: 0;

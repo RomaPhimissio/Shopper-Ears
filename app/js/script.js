@@ -46,44 +46,33 @@ window.addEventListener("load", () => {
       }
    }
 
-   // ! Spoiler.html
+   // ! Accordeon
 
-   if (qa(".footer__preview")) {
-      body.addEventListener("click", toggleAccordion);
+   const previewElements = document.querySelectorAll(".footer__preview");
 
-      function toggleAccordion(e) {
-         const preview = e.target.closest(".footer__preview");
-         if (preview) {
-            const currentAccordion = preview.closest(".footer__column");
-            const content = currentAccordion.querySelector(".footer__column-block-text");
+   previewElements.forEach(function (preview) {
+      preview.addEventListener("click", toggleAccordion);
+   });
 
-            if (currentAccordion && content) {
-               const isExpanded = currentAccordion.classList.contains("opened");
+   function toggleAccordion(e) {
+      const currentColumn = e.currentTarget.closest(".footer__column");
+      const columnText = currentColumn.querySelector(".footer__column-block-text");
 
-               const accordions = qa(".footer__column");
-               const contents = qa(".footer__column-block-text");
+      if (currentColumn.classList.contains("opened")) {
+         // Если текущий аккордеон уже открыт, закрываем его
+         currentColumn.classList.remove("opened");
+         columnText.style.height = "0";
+      } else {
+         // Если текущий аккордеон закрыт, закрываем все остальные и открываем текущий
+         const openedColumns = document.querySelectorAll(".footer__column.opened");
+         openedColumns.forEach(function (column) {
+            column.classList.remove("opened");
+            const text = column.querySelector(".footer__column-block-text");
+            text.style.height = "0";
+         });
 
-               accordions.forEach(accordion => {
-                  const accordionPreview = accordion.querySelector(".footer__preview");
-                  const accordionContent = accordion.querySelector(".footer__column-block-text");
-
-                  if (accordion === currentAccordion) {
-                     accordion.classList.toggle("opened", !isExpanded);
-                     accordionContent.style.height = isExpanded ? null : `${accordionContent.scrollHeight}px`;
-                  } else {
-                     accordion.classList.remove("opened");
-                     accordionContent.style.height = null;
-                  }
-
-                  if (accordionPreview) {
-                     const arrowIcon = accordionPreview.querySelector(".arrow");
-                     if (arrowIcon) {
-                        arrowIcon.style.transform = accordion.classList.contains("opened") ? "rotate(270deg)" : "rotate(90deg)";
-                     }
-                  }
-               });
-            }
-         }
+         currentColumn.classList.add("opened");
+         columnText.style.height = columnText.scrollHeight + "px";
       }
    }
 
@@ -119,14 +108,14 @@ window.addEventListener("load", () => {
 });
 
 // ! Zoom for img 
-const videoSign = document.querySelector('.hero__video-sign');
+const videoBlock = document.querySelector('.hero__block-video-wrap');
 const videoPic = document.querySelector('.hero__video-pic img');
 
-videoSign.addEventListener('mouseover', () => {
+videoBlock.addEventListener('mouseover', () => {
    videoPic.classList.add('zoomed');
 });
 
-videoSign.addEventListener('mouseout', () => {
+videoBlock.addEventListener('mouseout', () => {
    videoPic.classList.remove('zoomed');
 });
 
@@ -155,12 +144,12 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
 
    // ! Pop-up с авто запуском видео фрейма 
-   const videoBtnSign = document.querySelector('.hero__video-sign');
+   const videoBtnBlock = document.querySelector('.hero__block-video-wrap');
    const popUp = document.querySelector('.pop-up');
    const popUpClose = document.querySelector('.pop-up__close');
    const videoIframe = document.querySelector('.pop-up__body iframe');
 
-   videoBtnSign.addEventListener('click', toggleVideoPopup);
+   videoBtnBlock.addEventListener('click', toggleVideoPopup);
    popUpClose.addEventListener('click', toggleVideoPopup);
 
    function toggleVideoPopup() {
@@ -252,6 +241,8 @@ breadcrumbs2.forEach((breadcrumb, index) => {
       breadcrumb.classList.add('active');
    }
 });
+
+
 
 
 // ! Stars === Stars === Stars === Stars === Stars === Stars === Stars
@@ -348,3 +339,16 @@ circles.forEach(circle => {
 
 // Добавляем класс "active" к первому элементу
 circles[0].classList.add('active');
+
+// ! Отмена скролла при клике на ссылку
+
+const allLinks = document.querySelectorAll('a');
+
+allLinks.forEach((link) => {
+   link.addEventListener('click', (event) => {
+      event.preventDefault(); // Отменяем действие по умолчанию (скроллинг вверх)
+
+      // Дополнительный код для всех ссылок
+      // ...
+   });
+});

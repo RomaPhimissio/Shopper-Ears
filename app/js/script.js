@@ -378,3 +378,13 @@ function checkScroll() {
 }
 
 window.addEventListener('scroll', checkScroll);
+
+
+
+const cookieOptions = {
+   sameSite: 'None',
+   secure: true
+};
+
+// Установка cookie с атрибутами SameSite=None и Secure
+response.cookie('cookieName', 'cookieValue', cookieOptions);

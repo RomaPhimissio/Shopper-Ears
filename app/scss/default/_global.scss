@@ -79,3 +79,37 @@ main {
 .no-scroll {
    overflow: hidden;
 }
+
+
+@keyframes slide-in {
+   0% {
+      transform: translateX(-30%);
+      opacity: 0;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}
+
+.animate {
+   animation: slide-in 2s forwards;
+}
+
+
+@keyframes slide-right {
+   0% {
+      transform: translateX(30%);
+      opacity: 0;
+   }
+
+   100% {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}
+
+.animate-right {
+   animation: slide-right 2s forwards;
+}

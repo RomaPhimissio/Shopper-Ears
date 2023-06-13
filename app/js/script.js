@@ -352,3 +352,49 @@ allLinks.forEach((link) => {
       // ...
    });
 });
+
+// ! Animation elements 
+const titleElement = document.querySelector('.products__title');
+const breadcrumbsElement = document.querySelector('.products__breadcrumbs');
+const titleTwoElement = document.querySelector('.products__title-two');
+const breadcrumbsTwoElement = document.querySelector('.products__breadcrumbs-two');
+const blogTitleElement = document.querySelector('.blog__title');
+const windowHeight = window.innerHeight;
+
+function checkScroll() {
+   const titlePosition = titleElement.getBoundingClientRect().top;
+   const titleTwoPosition = titleTwoElement.getBoundingClientRect().top;
+
+   if (titlePosition - windowHeight <= 0) {
+      titleElement.classList.add('animate');
+      breadcrumbsElement.classList.add('animate-right');
+   }
+
+   if (titleTwoPosition - windowHeight <= 0) {
+      titleTwoElement.classList.add('animate');
+      breadcrumbsTwoElement.classList.add('animate-right');
+      blogTitleElement.classList.add('animate');
+   }
+}
+
+window.addEventListener('scroll', checkScroll);
+
+
+// const blogTitleElement = document.querySelector('.blog__title');
+// const windowHeight = window.innerHeight;
+// const observerOptions = {
+//    rootMargin: '0px 0px', // Отступы для точного определения момента видимости элемента
+// };
+
+// function handleIntersection(entries) {
+//    entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//          entry.target.classList.add('animate');
+//       } else {
+//          entry.target.classList.remove('animate');
+//       }
+//    });
+// }
+
+// const observer = new IntersectionObserver(handleIntersection, observerOptions);
+// observer.observe(blogTitleElement);

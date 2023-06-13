@@ -378,23 +378,3 @@ function checkScroll() {
 }
 
 window.addEventListener('scroll', checkScroll);
-
-
-// const blogTitleElement = document.querySelector('.blog__title');
-// const windowHeight = window.innerHeight;
-// const observerOptions = {
-//    rootMargin: '0px 0px', // Отступы для точного определения момента видимости элемента
-// };
-
-// function handleIntersection(entries) {
-//    entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//          entry.target.classList.add('animate');
-//       } else {
-//          entry.target.classList.remove('animate');
-//       }
-//    });
-// }
-
-// const observer = new IntersectionObserver(handleIntersection, observerOptions);
-// observer.observe(blogTitleElement);

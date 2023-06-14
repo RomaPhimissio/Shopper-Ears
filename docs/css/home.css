@@ -177,7 +177,7 @@ button {
 
 @font-face {
   font-family: "Montserrat";
-  font-display: fallback;
+  font-display: swap;
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.woff2") format("woff2");
@@ -185,7 +185,7 @@ button {
 
 @font-face {
   font-family: "Montserrat";
-  font-display: fallback;
+  font-display: swap;
   font-style: normal;
   font-weight: 500;
   src: url("../fonts/Montserrat-Medium.woff") format("woff"), url("../fonts/Montserrat-Medium.woff2") format("woff2");
@@ -193,7 +193,7 @@ button {
 
 @font-face {
   font-family: "Montserrat";
-  font-display: fallback;
+  font-display: swap;
   font-style: normal;
   font-weight: 600;
   src: url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
@@ -201,7 +201,7 @@ button {
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons.ttf?jy62k") format("truetype"), url("../fonts/icons.woff2?jy62k") format("woff2"), url("../fonts/icons.woff?jy62k") format("woff"), url("../fonts/icons.svg?jy62k#icons") format("svg");
+  src: url("../fonts/icons.ttf?jy62k") format("truetype"), url("../fonts/icons.woff?jy62k") format("woff"), url("../fonts/icons.svg?jy62k#icons") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

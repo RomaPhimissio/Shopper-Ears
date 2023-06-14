@@ -179,7 +179,7 @@ button {
   font-family: "Montserrat";
   font-display: swap;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 400;
   src: url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.woff2") format("woff2");
 }
 
@@ -187,7 +187,7 @@ button {
   font-family: "Montserrat";
   font-display: swap;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 500;
   src: url("../fonts/Montserrat-Medium.woff") format("woff"), url("../fonts/Montserrat-Medium.woff2") format("woff2");
 }
 
@@ -195,7 +195,7 @@ button {
   font-family: "Montserrat";
   font-display: swap;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 600;
   src: url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
 }
 

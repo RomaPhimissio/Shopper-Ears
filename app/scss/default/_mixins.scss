@@ -1,13 +1,3 @@
-@mixin typographic($c, $fz, $lh, $ls, $ff, $fw, $op: 1) {
-	color: $c;
-	font-size: calc($fz / 16 * 1em);
-	line-height: $lh/$fz;
-	letter-spacing: $ls;
-	font-family: $ff;
-	font-weight: $fw;
-	opacity: $op;
-}
-
 @mixin fz($fz: 16) {
 	font-size: calc($fz / 16 * 1em);
 }

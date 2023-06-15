@@ -138,8 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
    window.addEventListener("resize", handleViewportChange);
 });
 
-
-
 // ! Pop-up с авто запуском видео фрейма 
 document.addEventListener('DOMContentLoaded', function () {
    const videoBtnBlock = document.querySelector('.hero__block-video-wrap');
@@ -210,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function () {
       videoIframe.src = videoSrc.replace('autoplay=1', 'autoplay=0');
    }
 });
-
 
 
 // ! Breadcrumbs === Breadcrumbs === Breadcrumbs === Breadcrumbs === Breadcrumbs

@@ -140,14 +140,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+// ! Pop-up с авто запуском видео фрейма 
 document.addEventListener('DOMContentLoaded', function () {
-
-   // ! Pop-up с авто запуском видео фрейма 
    const videoBtnBlock = document.querySelector('.hero__block-video-wrap');
    const popUp = document.querySelector('.pop-up');
    const popUpClose = document.querySelector('.pop-up__close');
-   const videoIframe = document.querySelector('.pop-up__body iframe');
 
    videoBtnBlock.addEventListener('click', toggleVideoPopup);
    popUpClose.addEventListener('click', toggleVideoPopup);
@@ -164,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
    function openVideoPopup() {
       popUp.classList.add('active');
       body.classList.add('no-scroll');
-      playVideo();
+      loadVideo();
 
       // Переворачиваем экран в горизонтальное положение (только на поддерживаемых устройствах)
       if (window.screen.orientation && window.screen.orientation.lock) {
@@ -183,7 +180,22 @@ document.addEventListener('DOMContentLoaded', function () {
       }
    }
 
+   function loadVideo() {
+      const videoIframe = document.createElement('iframe');
+      videoIframe.src = 'https://www.youtube.com/embed/94K4XNCPTJw';
+      videoIframe.title = 'YouTube video player';
+      videoIframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      videoIframe.allowfullscreen = true;
+      videoIframe.loading = 'lazy';
+
+      const popUpBody = document.querySelector('.pop-up__body');
+      popUpBody.appendChild(videoIframe);
+
+      playVideo();
+   }
+
    function playVideo() {
+      const videoIframe = document.querySelector('.pop-up__body iframe');
       const videoSrc = videoIframe.src;
       if (videoSrc.includes('autoplay=0')) {
          videoIframe.src = videoSrc.replace('autoplay=0', 'autoplay=1');
@@ -193,11 +205,12 @@ document.addEventListener('DOMContentLoaded', function () {
    }
 
    function stopVideo() {
+      const videoIframe = document.querySelector('.pop-up__body iframe');
       const videoSrc = videoIframe.src;
       videoIframe.src = videoSrc.replace('autoplay=1', 'autoplay=0');
    }
-
 });
+
 
 
 // ! Breadcrumbs === Breadcrumbs === Breadcrumbs === Breadcrumbs === Breadcrumbs

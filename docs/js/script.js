@@ -390,30 +390,3 @@ function checkScroll() {
 window.addEventListener('scroll', checkScroll);
 
 
-// ! Load lazy 
-function handleScroll() {
-   // Проверяем, насколько прокручена страница
-   var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-   // Получаем высоту видимой части окна браузера
-   var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-   // Получаем высоту всего документа
-   var documentHeight = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-   );
-
-   // Проверяем, достигнут ли конец страницы
-   if (scrollPosition + windowHeight >= documentHeight) {
-      // Здесь можно выполнить подгрузку дополнительного контента
-      // например, загрузить данные с сервера и добавить их к текущему контенту
-   }
-}
-
-// Добавляем обработчик события прокрутки страницы
-window.addEventListener('scroll', handleScroll);
-
-handleScroll();

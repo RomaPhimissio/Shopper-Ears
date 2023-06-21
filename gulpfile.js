@@ -16,7 +16,6 @@ const fileInclude = require("gulp-file-include");
 const replace = require("gulp-replace");
 const fonter = require("gulp-fonter");
 const ttf2woff2 = require("gulp-ttf2woff2");
-const sourcemaps = require("gulp-sourcemaps");
 const { dest } = require("gulp");
 // const babel = require('gulp-babel')
 // const concat = require('gulp-concat')
@@ -118,7 +117,6 @@ function js() {
    return (
       gulp
          .src([paths.js.app, "!" + "app/js/**/*.min.js"])
-         .pipe(sourcemaps.init())
          // .pipe(babel({
          // 	presets: ['@babel/env'] //небольшое изменения джс файла на старый стандарт
          // }))
@@ -132,7 +130,6 @@ function js() {
          )
          .pipe(gulp.dest(paths.js.dest))
          .pipe(gulp.src("app/js/**/*.min.js"))
-         .pipe(sourcemaps.write())
          .pipe(gulp.dest(paths.js.dest))
          .pipe(browsersync.stream())
    );

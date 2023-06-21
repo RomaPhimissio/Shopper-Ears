@@ -1,0 +1,123 @@
+@keyframes preloader-ellipsis-scale {
+    0% {
+        transform: translate(12px, 80px) scale(0);
+    }
+
+    25% {
+        transform: translate(12px, 80px) scale(0);
+    }
+
+    50% {
+        transform: translate(12px, 80px) scale(1);
+    }
+
+    75% {
+        transform: translate(80px, 80px) scale(1);
+    }
+
+    100% {
+        transform: translate(148px, 80px) scale(1);
+    }
+}
+
+@keyframes preloader-ellipsis-hide {
+    0% {
+        transform: translate(148px, 80px) scale(1);
+    }
+
+    100% {
+        transform: translate(148px, 80px) scale(0);
+    }
+}
+
+@keyframes preloader-ellipsis-color {
+    0% {
+        background: #e15b64;
+    }
+
+    25% {
+        background: #abbd81;
+    }
+
+    50% {
+        background: #f8b26a;
+    }
+
+    75% {
+        background: #f47e60;
+    }
+
+    100% {
+        background: #e15b64;
+    }
+}
+
+.preloader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-spinner {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.preloader-ellipsis {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+}
+
+.preloader-ellipsis div {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(80px, 80px) scale(1);
+    background: #e15b64;
+    animation: preloader-ellipsis-scale 1s infinite cubic-bezier(0, 0.5, 0.5, 1);
+}
+
+.preloader-ellipsis div:nth-child(1) {
+    background: #f47e60;
+    transform: translate(148px, 80px) scale(1);
+    animation: preloader-ellipsis-hide 0.25s infinite cubic-bezier(0, 0.5, 0.5, 1),
+        preloader-ellipsis-color 1s infinite step-start;
+}
+
+.preloader-ellipsis div:nth-child(2) {
+    animation-delay: -0.25s;
+    background: #e15b64;
+}
+
+.preloader-ellipsis div:nth-child(3) {
+    animation-delay: -0.5s;
+    background: #f47e60;
+}
+
+.preloader-ellipsis div:nth-child(4) {
+    animation-delay: -0.75s;
+    background: #f8b26a;
+}
+
+.preloader-ellipsis div:nth-child(5) {
+    animation-delay: -1s;
+    background: #abbd81;
+}
+
+.preloader-overlay-hidden {
+    display: none;
+}

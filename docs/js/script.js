@@ -390,3 +390,9 @@ function checkScroll() {
 window.addEventListener('scroll', checkScroll);
 
 
+// ! Preloader 
+
+window.addEventListener('load', function () {
+   var preloaderOverlay = document.querySelector('.preloader-overlay');
+   preloaderOverlay.classList.add('preloader-overlay-hidden');
+});

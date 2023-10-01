@@ -46,6 +46,33 @@ window.addEventListener("load", () => {
       }
    }
 
+   // ! Scroll Navigation 
+
+   const menuLinks = document.querySelectorAll('.header__nav-link[data-goto]');
+   if (menuLinks.length > 0) {
+      menuLinks.forEach(menuLink => {
+         menuLink.addEventListener("click", onMenuLinkClick);
+      })
+
+      function onMenuLinkClick(e) {
+         const menuLink = e.target;
+         if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+            const gotoBlock = document.querySelector(menuLink.dataset.goto);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset;
+            // ! Если шапка с position fixed то тогда нужно отнять высоту шапки
+            // const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+
+            window.scrollTo({
+               top: gotoBlockValue,
+               behavior: "smooth"
+            })
+            e.preventDefault();
+         }
+      }
+   }
+
+
    // ! Accordeon
 
    const previewElements = document.querySelectorAll(".footer__preview");
